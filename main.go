@@ -55,7 +55,7 @@ func main() {
 
 func ping(proxyURL string, authInfo request.Authentication) {
 	rand.Seed(time.Now().UnixNano())
-	client := resty.New().SetProxy(proxyURL).
+	client := resty.New().
 		SetTLSClientConfig(&tls.Config{InsecureSkipVerify: true}).
 		SetHeader("content-type", "application/json").
 		SetHeader("origin", "chrome-extension://fpdkjdnhkakefebpekbdhillbhonfjjp").
